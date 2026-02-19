@@ -1,89 +1,123 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="ar" dir="rtl">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.9.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.9.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen_Siz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #282828;
+            color: white;
+            font-size: 35px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-      });
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .grid> :last-child:nth-child(odd) {
+            grid-column: span 2;
+        }
+
+        button {
+            background-color: #ccc;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: Cairo;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        p {
+            background: text linear-gradient(180deg,
+                    rgb(255, 255, 255) 10%,
+                    rgb(179, 179, 179) 40%,
+                    rgb(88, 88, 88) 100%);
+            color: transparent;
+        }
+
+        input {
+            padding: 10px;
+            background-color: #ccc;
+            text-align: center;
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            text-align: center;
+        }
+
+        #screenSize {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+Log out
+<body>
+    <div class="grid2">
+        <button id="btn8">قياس حجم الشاشة</button>
+        <button id="fullScreenBtn">تفعيل وضع ملء الشاشة</button>
+        <p id="width">العرض</p>
+        <p id="height">الطول</p>
+        <p id="widthInch">العرض بالبوصة</p>
+        <p id="heightInch">الارتفاع بالبوصة</p>
+        <p id="screenSize">حجم الشاشة الحقيقي بالبوصة</p>
+    </div>
+    <script>
+        let btn8 = document.getElementById("btn8");
+        let width = document.getElementById("width");
+        let height = document.getElementById("height");
+        let widthInch = document.getElementById("widthInch");
+        let heightInch = document.getElementById("heightInch");
+        let screenSize = document.getElementById("screenSize");
+        let fullBtn = document.getElementById("fullScreenBtn");
+        fullBtn.addEventListener("click", function () {
+            if (!document.fullscreenElement) {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                }
+                fullBtn.textContent = "الخروج من ملء الشاشة";
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                fullBtn.textContent = "تفعيل وضع ملء الشاشة";
+            }
+        });
+        btn8.addEventListener("click", function () {
+            function updateDisplay() {
+                let wPx = window.innerWidth;
+                let hPx = window.innerHeight;
+                let wIn = (wPx / 96).toFixed(2);
+                let hIn = (hPx / 96).toFixed(2);
+                let diagonalPx = Math.sqrt(Math.pow(wPx, 2) + Math.pow(hPx, 2));
+                let totalInch = (diagonalPx / 96).toFixed(1)
+                width.textContent = `${wPx} : العرض`;
+                height.textContent = `${hPx} : الارتفاع`;
+                if (widthInch) widthInch.textContent = `العرض: ${wIn} بوصة`;
+                if (heightInch) heightInch.textContent = `الارتفاع: ${hIn} بوصة`;
+                if (screenSize) {
+                    screenSize.textContent = `مقاس الشاشة الكلي: ${totalInch} بوصة`;
+                }
+            }
+            updateDisplay();
+            window.addEventListener("resize", updateDisplay);
+            btn8.textContent = "جاري تتبع حجم الشاشة...";
+            btn8.disabled = true;
+        })
     </script>
-  </body>
+</body>
+
 </html>
